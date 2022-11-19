@@ -18,11 +18,13 @@ function CreateArea(props) {
   }
 
   function submitNote(event) {
-    props.onAdd(note);
-    setNote({
-      title: "",
-      content: ""
-    });
+    if(note.title !== "" && note.content !== "") {
+      props.onAdd(note);
+      setNote({
+        title: "",
+        content: ""
+      });
+    }
     event.preventDefault();
   }
 
